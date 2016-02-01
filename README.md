@@ -8,4 +8,4 @@ Run `./gradlew clean build` and check the `build` folder.
 
 ## License
 
-Licensed under [LGPL v3](https://www.gnu.org/licenses/lgpl-3.0.en.html).
+Licensed under [CC0](https://creativecommons.org/publicdomain/zero/1.0/).
