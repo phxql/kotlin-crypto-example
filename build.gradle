@@ -2,7 +2,7 @@ group 'de.mkammerer'
 version '1.0-SNAPSHOT'
 
 buildscript {
-    ext.kotlin_version = '1.0.1-2'
+    ext.kotlin_version = '1.0.3'
     repositories {
         mavenCentral()
     }
@@ -25,5 +25,5 @@ repositories {
 }
 
 task wrapper(type: Wrapper) {
-    gradleVersion = '2.13'
+    gradleVersion = '2.14'
 }
