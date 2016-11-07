@@ -5,6 +5,11 @@ import org.junit.Assert
 import org.junit.Test
 
 class CBCTests {
+    /**
+     * Uses AES CBC with PKCS5 padding and a SHA256 HMAC.
+     *
+     * If you use AES CBC mode, you have to protect it with a HMAC!
+     */
     @Test fun testCbcAndHmac() {
         // Generate two keys: one for CBC, one for the HMAC
         val cbcKey = generateKey(256)
@@ -26,6 +31,9 @@ class CBCTests {
         Assert.assertThat(decrypted, CoreMatchers.equalTo(plaintext))
     }
 
+    /**
+     * Uses AES GCM.
+     */
     @Test fun testGcm() {
         // GCM only needs one key. If you can use GCM, prefer that over CBC + HMAC
         val key = generateKey(256)
