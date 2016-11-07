@@ -8,3 +8,6 @@ Contains:
 * AES GCM
 
 See [the code](test/kotlin/de/mkammerer/Crypto.kt)
+
+## License
+CC0
