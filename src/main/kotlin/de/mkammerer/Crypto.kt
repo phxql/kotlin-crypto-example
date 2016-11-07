@@ -7,6 +7,9 @@ import javax.crypto.spec.GCMParameterSpec
 import javax.crypto.spec.IvParameterSpec
 import javax.crypto.spec.SecretKeySpec
 
+/**
+ * Be sure to use a SecureRandom!
+ */
 val secureRandom = SecureRandom()
 
 /**
@@ -71,7 +74,7 @@ fun encryptGcm(plaintext: ByteArray, key: ByteArray): Ciphertext {
     val keySpec = SecretKeySpec(key, "AES")
 
     val nonce = generateNonce()
-    val gcmSpec = GCMParameterSpec(128, nonce)
+    val gcmSpec = GCMParameterSpec(128, nonce) // 128 bit authentication tag
 
     cipher.init(Cipher.ENCRYPT_MODE, keySpec, gcmSpec)
 
@@ -139,7 +142,7 @@ fun decryptGcm(ciphertext: Ciphertext, key: ByteArray): ByteArray {
     val cipher = Cipher.getInstance("AES/GCM/NoPadding")
     val keySpec = SecretKeySpec(key, "AES")
 
-    val gcmSpec = GCMParameterSpec(128, ciphertext.iv)
+    val gcmSpec = GCMParameterSpec(128, ciphertext.iv) // 128 bit authentication tag
 
     cipher.init(Cipher.DECRYPT_MODE, keySpec, gcmSpec)
 
