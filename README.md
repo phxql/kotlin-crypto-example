@@ -1,11 +1,10 @@
-# Kotlin & Gradle skeleton
+# Kotlin crypto showcase
 
-This repository contains a starting point for Kotlin projects.
+A showcase for Kotlin crypto code.
 
-## Building
+Contains:
 
-Run `./gradlew clean build` and check the `build` folder.
+* AES CBC with HMAC checking
+* AES GCM
 
-## License
-
-Licensed under [CC0](https://creativecommons.org/publicdomain/zero/1.0/).
+See [test/kotlin/de/mkammerer/Crypto.kt]
